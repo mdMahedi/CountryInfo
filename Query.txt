@@ -1,0 +1,20 @@
+
+create database CityInfoDB
+use CityInfoDB
+create table tbl_Country
+(
+id int primary key identity,
+name nvarchar (50) unique,
+about nvarchar (150)
+)
+create table tbl_City
+(
+id int primary key identity,
+cityName nvarchar (50) unique,
+about nvarchar (150),
+dwellers float,
+location nvarchar (150),
+weather nvarchar (50),
+country int foreign key references tbl_Country(id)
+
+)
